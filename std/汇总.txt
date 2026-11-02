@@ -1,0 +1,81 @@
+CosyVoice3 vs Ming-3.0-tts-0.5B：中英混读英文发音对比（不套读音表，克隆同一段参考音，每句 3 次）
+判定：Whisper large-v3-turbo zh/en 双转写，任一能识别出该词即算念对。识别对 ≠ 念得地道，以试听为准。
+
+指标                     cv3        ming
+英文词正确率               82.5%       85.7%
+  字母缩写               78.2%       73.1%
+  单词/工具名             81.8%      100.0%
+  多词术语               86.7%       91.1%
+  曾经念错的词             85.7%       90.5%
+  同形异音               91.7%      100.0%
+3次全对的词               39/58       49/58
+中文读错字/条               0.00        0.01
+中文存疑字/条               0.12        0.09
+音色相似度                0.887       0.774
+语速异常条数               0/180       0/180
+RTF                   1.86        4.60
+
+逐词（命中次数/3）：
+词                            cv3    ming
+API                        3/  3   3/  3
+ATR                        2/  3   3/  3
+CNC                        3/  3   3/  3
+CPU                        3/  3   3/  3
+EMA                        2/  3   3/  3
+ETF                        5/  6   6/  6
+GBDT                       3/  3   3/  3
+GPU                        3/  3   3/  3
+HFT                        3/  3   3/  3
+IMU                        2/  3   3/  3
+LLM                        6/  6   1/  6
+LSTM                       3/  3   3/  3
+MACD                       0/  3   3/  3
+OHLC                       3/  3   3/  3
+PID                        3/  3   3/  3
+PPO                        2/  3   3/  3
+RAG                        1/  6   1/  6
+SQL                        3/  3   3/  3
+TWAP                       5/  6   3/  6
+VaR                        0/  3   0/  3
+VWAP                       6/  6   1/  6
+close                      3/  3   3/  3
+lead screw                 3/  3   3/  3
+live data                  3/  3   3/  3
+wind turbine               2/  3   3/  3
+Alpha                      3/  3   3/  3
+Backtest                   1/  3   3/  3
+ball screw                 2/  3   2/  3
+Beta                       2/  3   3/  3
+Bollinger Bands            3/  3   3/  3
+Diffusion Policy           3/  3   3/  3
+Flow Matching              3/  3   3/  3
+Kalman Filter              3/  3   0/  3
+Market Maker               3/  3   3/  3
+Momentum                   3/  3   3/  3
+Moving Average             3/  3   3/  3
+Order Book                 3/  3   3/  3
+Reinforcement Learning     3/  3   3/  3
+Sharpe Ratio               1/  3   3/  3
+Stop Loss                  3/  3   3/  3
+dataset                    3/  3   3/  3
+encoder                    3/  3   3/  3
+gearbox                    3/  3   2/  3
+preload                    3/  3   3/  3
+reusable                   3/  3   3/  3
+semiconductor              3/  3   2/  3
+timestamp                  0/  3   3/  3
+CSV                        3/  3   3/  3
+Docker                     3/  3   3/  3
+Excel                      3/  3   3/  3
+GitHub                     2/  3   3/  3
+LightGBM                   2/  3   3/  3
+NumPy                      1/  3   3/  3
+Pandas                     3/  3   3/  3
+Python                     3/  3   3/  3
+PyTorch                    3/  3   3/  3
+ROS                        1/  3   3/  3
+Transformer                3/  3   3/  3
+
+cv3 差、ming 好（差 ≥ 2/3）：MACD、ROS、NumPy、Sharpe Ratio、Backtest、timestamp
+ming 差、cv3 好（差 ≥ 2/3）：VWAP、LLM、Kalman Filter
+两边都不行（都 ≤ 1/3）：VaR、RAG

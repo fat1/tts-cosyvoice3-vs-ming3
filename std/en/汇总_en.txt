@@ -1,0 +1,40 @@
+整句英文测试：CV3 vs Ming，两边都不套读音表、克隆同一段英文参考音（Ming 用 language_id=English）
+20 句来自已完成系列的英文旁白，每句 3 次；Whisper large-v3-turbo 转写。
+
+指标                       cv3        ming
+WER（越低越好）               3.9%        3.2%
+整句全对的条数                31/60       40/60
+难词识别率                  98.5%       98.2%
+音色相似度                  0.892       0.774
+语速异常条数                  0/60        0/60
+RTF                     1.80        4.60
+
+逐句 WER（3 次合计错词数 / 词数×3）与没识别出的难词：
+01 P06E02  cv3  5/96  漏:- | ming  0/96  漏:-
+02 S04E07  cv3  0/96  漏:- | ming  3/96  漏:-
+03 S01E05  cv3  0/93  漏:- | ming  2/93  漏:-
+04 S01E08  cv3  3/57  漏:- | ming  1/57  漏:-
+05 S02E08  cv3  6/87  漏:- | ming  6/87  漏:-
+06 S04E01  cv3  0/72  漏:- | ming  0/72  漏:-
+07 P01E02  cv3  6/66  漏:- | ming  7/66  漏:ROS
+08 P01E03  cv3  4/96  漏:- | ming  0/96  漏:-
+09 P04E01  cv3  7/81  漏:- | ming  0/81  漏:-
+10 P05E05  cv3  0/84  漏:- | ming  0/84  漏:-
+11 U03E03  cv3  6/81  漏:- | ming 12/81  漏:-
+12 U06E01  cv3  2/78  漏:reusable | ming  0/78  漏:-
+13 Q01E01  cv3  1/84  漏:ninety-eight | ming  0/84  漏:ninety-eight
+14 Q01E02  cv3  1/42  漏:- | ming  0/42  漏:-
+15 Q01E06  cv3  0/69  漏:- | ming  1/69  漏:-
+16 Q02E06  cv3  0/87  漏:- | ming  0/87  漏:-
+17 Q04E05  cv3  0/69  漏:- | ming  0/69  漏:-
+18 U01E01  cv3 12/72  漏:CAM | ming 12/72  漏:-
+19 U01E02  cv3  7/60  漏:- | ming  5/60  漏:-
+20 U02E06  cv3  0/66  漏:- | ming  0/66  漏:-
+
+逐个难词（共 91 个）：3 次里至少错 1 次 → 不建读音表时需要处理
+  cv3 需处理 3 个：CAM(5/6)、reusable(2/3)、ninety-eight(0/3)
+  ming 需处理 2 个：ROS(0/3)、ninety-eight(0/3)
+
+生产读音表 pronounce_en.txt 里的词出现在测试句中的有 6 个：encoder、ROS、OpenCV、intrinsics、MPC、reusable
+  cv3 不用读音表 3 次全对：5/6  仍错：reusable
+  ming 不用读音表 3 次全对：5/6  仍错：ROS

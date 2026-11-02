@@ -1,0 +1,62 @@
+整句英文试听：每句先 cv3 后 ming（各取第 1 次），每段前一声提示音。
+
+  1  0:00.0  01 cv3   WER 3/32  漏:-  听成: The first kind in simulation, a planner completes tasks automatically because a simulator knows exactly where every object is, generating thousands of demos overnight. Everyone with perfectly accurate labels built in.
+  2  0:14.8  01 ming  WER 0/32  漏:-  听成: The first kind. In simulation, a planner completes tasks automatically, because the simulator knows exactly where every object is, generating thousands of demos overnight. Every one with perfectly accurate labels built in.
+          原文: The first kind: in simulation, a planner completes tasks automatically, because the simulator knows exactly where every object is, generating thousands of demos overnight, every one with perfectly accurate labels built in.
+  3  0:29.3  02 cv3   WER 0/32  漏:-  听成: photograph a high-precision checkerboard, and the software finds every corner, compares them to their true positions, and solves for lens distortion, camera pose, and exactly how many millimeters each pixel represents.
+  4  0:43.9  02 ming  WER 2/32  漏:-  听成: Photograph a high, precision checkerboard, and the software finds every corner, compares them to their true positions, and solves her length distortion. Camera pose, and exactly how many millimeters each pixel represents.
+          原文: Photograph a high-precision checkerboard, and the software finds every corner, compares them to their true positions, and solves for lens distortion, camera pose, and exactly how many millimeters each pixel represents.
+  5  0:58.3  03 cv3   WER 0/31  漏:-  听成: Of course, 5-axis has a cost. More expensive machines, programming that depends on CAM software, careful collision simulation between tool, spindle, and fixture, and regular calibration of the rotary axes.
+  6  1:13.8  03 ming  WER 0/31  漏:-  听成: Of course, five-axis has a cost, more expensive machines, programming that depends on CAM software, careful collision simulation between tool, spindle and fixture, and regular calibration of the rotary axes.
+          原文: Of course, 5-axis has a cost: more expensive machines, programming that depends on CAM software, careful collision simulation between tool, spindle and fixture, and regular calibration of the rotary axes.
+  7  1:28.2  04 cv3   WER 1/19  漏:-  听成: Ultra-precision machines sit in temperature-controlled, vibration-isolated rooms, and diamond-turn optics with nanomatter-level surface roughness.
+  8  1:38.4  04 ming  WER 0/19  漏:-  听成: Ultra precision machines sit in temperature. Controlled vibration isolated rooms and diamond. Turn optics with nanometer level surface roughness.
+          原文: Ultra-precision machines sit in temperature-controlled, vibration-isolated rooms and diamond-turn optics with nanometer-level surface roughness.
+  9  1:48.6  05 cv3   WER 2/29  漏:-  听成: High-end machines go further, measuring the angle with lasers during the bend, sometimes briefly unloading to check spring back, then correcting automatically to get it right the first time.
+ 10  2:00.7  05 ming  WER 2/29  漏:-  听成: High-end machines go further, measuring the angle with lasers during the bend, sometimes briefly unloading to check spring back, then correcting automatically to get it right the first time.
+          原文: High-end machines go further, measuring the angle with lasers during the bend, sometimes briefly unloading to check springback, then correcting automatically to get it right the first time.
+ 11  2:12.1  06 cv3   WER 0/24  漏:-  听成: It's usually a permanent magnet synchronous motor with an encoder on the back, resolving hundreds of thousands, even millions of positions per turn.
+ 12  2:21.6  06 ming  WER 0/24  漏:-  听成: It's usually a permanent magnet synchronous motor with an encoder on the back, resolving hundreds of thousands, even millions, of positions per turn.
+          原文: It's usually a permanent magnet synchronous motor with an encoder on the back, resolving hundreds of thousands, even millions, of positions per turn.
+ 13  2:30.7  07 cv3   WER 3/22  漏:-  听成: An AI model is no different. An ROS2 is just an ordinary node that subscribes to images and publishes detection.
+ 14  2:39.7  07 ming  WER 3/22  漏:ROS  听成: An AI model is no different. An RS2 is just an ordinary node that subscribes to images and publishes detections.
+          原文: An AI model is no different: in ROS 2, it's just an ordinary node that subscribes to images and publishes detections.
+ 15  2:48.2  08 cv3   WER 2/32  漏:-  听成: The most common tool is OpenSev. Take a checkerboard, shoot a dozen photos from different angles, and OpenSev finds every corner, computes the intrinsics and distortion, and straightens out the bent image.
+ 16  3:02.7  08 ming  WER 0/32  漏:-  听成: The most common tool is OpenCV. Take a checkerboard, shoot a dozen photos from different angles, and OpenCV finds every corner, computes the intrinsics and distortion, and straightens out the bent image.
+          原文: The most common tool is OpenCV: take a checkerboard, shoot a dozen photos from different angles, and OpenCV finds every corner, computes the intrinsics and distortion, and straightens out the bent image.
+ 17  3:16.4  09 cv3   WER 3/27  漏:-  听成: Back in Season 1, when we covered MPC Robot, also rehearsed, but with physics equations handwritten by engineers, which only work for simple, well-defined systems.
+ 18  3:29.1  09 ming  WER 0/27  漏:-  听成: Back in Season 1 when we covered MPC, robots also rehearsed, but with Physics Equations Hand, written by engineers, which only work for simple, well-defined systems.
+          原文: Back in season one, when we covered MPC, robots also rehearsed, but with physics equations hand-written by engineers, which only work for simple, well-defined systems.
+ 19  3:40.9  10 cv3   WER 0/28  漏:-  听成: In the final season, we take these models out of the lab, from training to deployment with simulation, data pipelines on device, inference, safety layers, and self-driving.
+ 20  3:53.9  10 ming  WER 0/28  漏:-  听成: In the final season, we take these models out of the lab, from training to deployment, with simulation data pipelines, on-device inference, safety layers, and self-driving.
+          原文: In the final season, we take these models out of the lab: from training to deployment, with simulation, data pipelines, on-device inference, safety layers and self-driving.
+ 21  4:05.3  11 cv3   WER 2/27  漏:-  听成: Turn on the in-process workpiece, and the software remembers what the previous operation that's behind, and uses that remaining material as the next operation's blank.
+ 22  4:16.1  11 ming  WER 4/27  漏:-  听成: Turn on the in, process work piece. And the software remembers what the previous operation left behind and uses that remaining material as the next operations blank.
+          原文: Turn on the in-process workpiece, and the software remembers what the previous operation left behind and uses that remaining material as the next operation's blank.
+ 23  4:26.9  12 cv3   WER 1/26  漏:reusable  听成: In NX, you can save a finished program as a ruvro group of operations with the coordinate system, tools, operation order, and cutting parameters all inside.
+ 24  4:38.5  12 ming  WER 0/26  漏:-  听成: In NX, you can save a finished program as a reusable group of operations with the coordinate system, tools, operation order, and cutting parameters all inside.
+          原文: In NX, you can save a finished program as a reusable group of operations, with the coordinate system, tools, operation order and cutting parameters all inside.
+ 25  4:48.8  13 cv3   WER 0/28  漏:ninety-eight  听成: In 1998, long-term capital management, with Nobel Prize winners on board, had brilliant models and far too much leverage, and within a few months it nearly collapsed.
+ 26  5:01.5  13 ming  WER 0/28  漏:ninety-eight  听成: In 1998, long-term capital management, with Nobel Prize winners on board, had brilliant models and far too much leverage, and within a few months it nearly collapsed.
+          原文: In nineteen ninety-eight, Long-Term Capital Management, with Nobel Prize winners on board, had brilliant models and far too much leverage, and within a few months it nearly collapsed.
+ 27  5:12.4  14 cv3   WER 1/14  漏:-  听成: Quant wins on discipline and testability, the struggles with unprecedented events and crowded strategies.
+ 28  5:20.0  14 ming  WER 0/14  漏:-  听成: Quant wins on discipline and testability, but struggles with unprecedented events and crowded strategies.
+          原文: Quant wins on discipline and testability, but struggles with unprecedented events and crowded strategies.
+ 29  5:26.8  15 cv3   WER 0/23  漏:-  听成: Next season, we'll dive into classic strategies, trend following, mean reversion, breakouts, and arbitrage, and see where quant profits really come from.
+ 30  5:38.0  15 ming  WER 0/23  漏:-  听成: Next season, we'll dive into classic strategies, trend following, mean reversion, breakouts, and arbitrage, and see where quant profits really come from.
+          原文: Next season, we'll dive into classic strategies: trend following, mean reversion, breakouts and arbitrage, and see where quant profits really come from.
+ 31  5:47.3  16 cv3   WER 0/29  漏:-  听成: To sum up, asset allocation reduces swings through diversification. Rebalancing resets the mix by mechanically selling high and buying low. And risk parity allocates by risk rather than dollars.
+ 32  6:00.5  16 ming  WER 0/29  漏:-  听成: To sum up, asset allocation reduces swings through diversification. Rebalancing resets the mix by mechanically selling high and buying low. And risk parity allocates by risk rather than dollars.
+          原文: To sum up, asset allocation reduces swings through diversification, rebalancing resets the mix by mechanically selling high and buying low, and risk parity allocates by risk rather than dollars.
+ 33  6:13.1  17 cv3   WER 0/23  漏:-  听成: Third, look for genuinely different sources of return, different asset classes, and different kinds of strategies, too, like trend following and mean reversion.
+ 34  6:24.3  17 ming  WER 0/23  漏:-  听成: Third, look for genuinely different sources of return, different asset classes, and different kinds of strategies too, like trend following and mean reversion.
+          原文: Third, look for genuinely different sources of return: different asset classes, and different kinds of strategies too, like trend following and mean reversion.
+ 35  6:34.5  18 cv3   WER 4/24  漏:-  听成: Model, Operations, Toolpaths, Post-Processing, and G-Code. Put the five stops together and you have the big picture of NXCAM programming.
+ 36  6:46.6  18 ming  WER 4/24  漏:-  听成: Model, Operations, Toolpath, Post, Processing, and G. Code, put the five stops together, and you have the big picture of NXCAM programming.
+          原文: Model, operations, tool paths, post-processing and G-code: put the five stops together, and you have the big picture of NX CAM programming.
+ 37  6:56.4  19 cv3   WER 2/20  漏:-  听成: First, follow the drawing statum. Wherever the dimensions start, put zero there so programming and inspection need no conversions.
+ 38  7:05.8  19 ming  WER 0/20  漏:-  听成: First, follow the drawing's datums. Wherever the dimensions start, put zero there, so programming and inspection need no conversions.
+          原文: First, follow the drawing's datums: wherever the dimensions start, put zero there, so programming and inspection need no conversions.
+ 39  7:14.2  20 cv3   WER 0/22  漏:-  听成: For complex 3D parts with lots of edges, NX has a dedicated deburring operation that finds all the sharp edges automatically.
+ 40  7:24.4  20 ming  WER 0/22  漏:-  听成: For complex 3D parts with lots of edges, NX has a dedicated deburring operation that finds all the sharp edges automatically.
+          原文: For complex 3D parts with lots of edges, NX has a dedicated deburring operation that finds all the sharp edges automatically.

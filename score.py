@@ -1,15 +1,17 @@
 """给 out/<模型>/ 下的所有 wav 打分，写 report.csv、汇总.txt、试听.wav、试听_目录.txt。在 tts-gpu 环境运行。
-用法: python score.py [模型目录名…]（默认 cv3 ming）
+用法: python score.py [模型名…]（默认 cv3 ming）
+环境变量 TAG=std：读 out/std_zh_<模型>/，结果写到 std/；参考音见 common.REF（默认 zh）。
 
 英文词判定（两个模型用同一个裁判）：Whisper large-v3-turbo 分别按 zh 和 en 各转写一遍，
 任一结果里能找到这个词（只比字母，滑动窗口相似度 ≥ pronounce.EN_MIN / EN_MIN_SHORT）就算念对。
 中文部分：Paraformer 转写后用 pronounce.compare() 统计漏读和读错的字。
-音色：CosyVoice3 自带的 campplus 说话人向量，与 steven.wav 的余弦相似度。
+音色：CosyVoice3 自带的 campplus 说话人向量，与参考音（common.SAMPLE）的余弦相似度。
 """
 from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 import sys
 from collections import defaultdict
@@ -24,6 +26,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "studio"))
 import pronounce  # noqa: E402
 
 from common import ROOT, RUNS, SAMPLE, load_sentences  # noqa: E402
+
+TAG = os.environ.get("TAG", "")
+RES = ROOT / TAG if TAG else ROOT  # 结果输出目录
+
+
+def sub(m: str) -> str:
+    return f"{TAG}_zh_{m}" if TAG else m
+
 
 CAMPPLUS = r"D:\steven\models\CosyVoice\pretrained_models\Fun-CosyVoice3-0.5B\campplus.onnx"
 CATEGORY = {"A": range(1, 25), "W": range(25, 35), "M": range(35, 50), "R": range(50, 57), "H": range(57, 61)}
@@ -69,17 +79,17 @@ def hit(term: str, heard_zh: str, heard_en: str) -> tuple[bool, str]:
 def main() -> None:
     import whisper
 
-    models = sys.argv[1:] or [m for m in ("cv3", "ming") if (ROOT / "out" / m / "timing.json").exists()]
+    models = sys.argv[1:] or [m for m in ("cv3", "ming") if (ROOT / "out" / sub(m) / "timing.json").exists()]
     sents = load_sentences()
     asr = whisper.load_model("large-v3-turbo", device="cuda", download_root=str(pronounce.WHISPER_DIR))
     spk = Spk()
     rows = []
     for m in models:
-        timing = json.loads((ROOT / "out" / m / "timing.json").read_text(encoding="utf-8"))
+        timing = json.loads((ROOT / "out" / sub(m) / "timing.json").read_text(encoding="utf-8"))
         for s in sents:
             for k in range(1, RUNS + 1):
                 name = f"{s['id']}_{k}"
-                wav = ROOT / "out" / m / f"{name}.wav"
+                wav = ROOT / "out" / sub(m) / f"{name}.wav"
                 if not wav.exists():
                     continue
                 a16 = load16(wav)
@@ -102,7 +112,8 @@ def main() -> None:
                     "asr_zh": zh.strip(), "asr_en": en.strip(), "text": s["text"],
                 })
                 print(m, name, rows[-1]["ok"], rows[-1]["heard"], flush=True)
-    with open(ROOT / "report.csv", "w", newline="", encoding="utf-8-sig") as f:
+    RES.mkdir(exist_ok=True)
+    with open(RES / "report.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)
@@ -117,7 +128,7 @@ def summarize(rows: list[dict], models: list[str]) -> None:
         for t, ok in zip(r["terms"].split(";"), r["ok"].split(";")):
             per_term[t][r["model"]].append(int(ok))
             cat_of[t] = r["cat"]
-    L = ["CosyVoice3 vs Ming-3.0-tts-0.5B：中英混读英文发音对比（不套读音表，steven 克隆，每句 3 次）",
+    L = ["CosyVoice3 vs Ming-3.0-tts-0.5B：中英混读英文发音对比（不套读音表，克隆同一段参考音，每句 3 次）",
          "判定：Whisper large-v3-turbo zh/en 双转写，任一能识别出该词即算念对。识别对 ≠ 念得地道，以试听为准。", ""]
     L.append(f"{'指标':<14}" + "".join(f"{m:>12}" for m in models))
 
@@ -148,7 +159,7 @@ def summarize(rows: list[dict], models: list[str]) -> None:
         L += ["", f"{a} 差、{b} 好（差 ≥ 2/3）：" + "、".join(t for t, v in sc.items() if v[b] - v[a] >= 0.66),
               f"{b} 差、{a} 好（差 ≥ 2/3）：" + "、".join(t for t, v in sc.items() if v[a] - v[b] >= 0.66),
               "两边都不行（都 ≤ 1/3）：" + "、".join(t for t, v in sc.items() if max(v.values()) <= 0.34)]
-    (ROOT / "汇总.txt").write_text("\n".join(L) + "\n", encoding="utf-8")
+    (RES / "汇总.txt").write_text("\n".join(L) + "\n", encoding="utf-8")
     print("\n".join(L))
 
 
@@ -157,11 +168,11 @@ def listening(sents: list[dict], models: list[str], sr: int = 44100) -> None:
     t = np.arange(int(0.15 * sr)) / sr
     beep = (0.2 * np.sin(2 * np.pi * 1000 * t)).astype("float32")
     gap = np.zeros(int(0.4 * sr), dtype="float32")
-    rows = {(r["model"], r["id"]): r for r in csv.DictReader(open(ROOT / "report.csv", encoding="utf-8-sig")) if r["run"] == "1"}
+    rows = {(r["model"], r["id"]): r for r in csv.DictReader(open(RES / "report.csv", encoding="utf-8-sig")) if r["run"] == "1"}
     audio, cat, pos, n = [], ["CV3 vs Ming 试听：每句先 cv3 后 ming，每段前一声提示音。", ""], 0, 0
     for s in sents:
         for m in models:
-            wav = ROOT / "out" / m / f"{s['id']}_1.wav"
+            wav = ROOT / "out" / sub(m) / f"{s['id']}_1.wav"
             if not wav.exists():
                 continue
             a, r0 = sf.read(wav, dtype="float32")
@@ -173,8 +184,8 @@ def listening(sents: list[dict], models: list[str], sr: int = 44100) -> None:
             for x in (beep, gap, a, gap):
                 audio.append(x)
                 pos += len(x)
-    sf.write(ROOT / "试听.wav", np.concatenate(audio), sr, subtype="PCM_16")
-    (ROOT / "试听_目录.txt").write_text("\n".join(cat) + "\n", encoding="utf-8")
+    sf.write(RES / "试听.wav", np.concatenate(audio), sr, subtype="PCM_16")
+    (RES / "试听_目录.txt").write_text("\n".join(cat) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

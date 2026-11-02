@@ -1,0 +1,122 @@
+CV3 vs Ming 试听：每句先 cv3 后 ming，每段前一声提示音。
+
+  1  0:00.0  01 cv3   ETF  对=0  听成=tf  | ETF 是一种在交易所买卖的基金，费用通常很低。
+  2  0:07.1  01 ming  ETF  对=1  听成=etf  | ETF 是一种在交易所买卖的基金，费用通常很低。
+  3  0:13.2  02 cv3   ETF  对=1  听成=etf  | 很多人第一次买指数基金，选的就是宽基 ETF。
+  4  0:19.2  02 ming  ETF  对=1  听成=etf  | 很多人第一次买指数基金，选的就是宽基 ETF。
+  5  0:24.7  03 cv3   HFT  对=1  听成=hft  | HFT 也就是高频交易，比拼的是微秒级的速度。
+  6  0:30.9  03 ming  HFT  对=1  听成=hft  | HFT 也就是高频交易，比拼的是微秒级的速度。
+  7  0:36.6  04 cv3   VWAP  对=1  听成=vwap  | 大资金拆单的时候，常用 VWAP 作为执行基准。
+  8  0:43.6  04 ming  VWAP  对=0  听成=vdow  | 大资金拆单的时候，常用 VWAP 作为执行基准。
+  9  0:49.2  05 cv3   TWAP  对=1  听成=twoap  | TWAP 把订单按时间平均切开，逻辑最简单。
+ 10  0:56.6  05 ming  TWAP  对=1  听成=tap  | TWAP 把订单按时间平均切开，逻辑最简单。
+ 11  1:03.2  06 cv3   TWAP,VWAP  对=1;1  听成=twap;vwap  | 如果成交量分布很不均匀，TWAP 和 VWAP 的差别就会变大。
+ 12  1:11.8  06 ming  TWAP,VWAP  对=1;0  听成=twp;wp  | 如果成交量分布很不均匀，TWAP 和 VWAP 的差别就会变大。
+ 13  1:18.0  07 cv3   MACD  对=0  听成=mycd  | MACD 由两条均线的差值算出来，用来判断趋势。
+ 14  1:24.1  07 ming  MACD  对=1  听成=macd  | MACD 由两条均线的差值算出来，用来判断趋势。
+ 15  1:30.1  08 cv3   ATR  对=1  听成=atr  | 止损距离可以设成两倍的 ATR，这样能随波动自动调整。
+ 16  1:37.5  08 ming  ATR  对=1  听成=atr  | 止损距离可以设成两倍的 ATR，这样能随波动自动调整。
+ 17  1:44.0  09 cv3   VaR  对=0  听成=ar  | 风控部门每天都要计算组合的 VaR。
+ 18  1:48.5  09 ming  VaR  对=0  听成=r  | 风控部门每天都要计算组合的 VaR。
+ 19  1:53.1  10 cv3   OHLC  对=1  听成=ohlc  | 一根 K 线包含四个价格，也就是 OHLC 数据。
+ 20  1:59.8  10 ming  OHLC  对=1  听成=ohlc  | 一根 K 线包含四个价格，也就是 OHLC 数据。
+ 21  2:05.5  11 cv3   RAG  对=0  听成=r  | 想让大模型回答公司内部文档，最常见的做法是 RAG。
+ 22  2:11.9  11 ming  RAG  对=0  听成=  | 想让大模型回答公司内部文档，最常见的做法是 RAG。
+ 23  2:18.0  12 cv3   LLM  对=1  听成=llm  | LLM 擅长读新闻和财报，但不擅长直接预测价格。
+ 24  2:25.7  12 ming  LLM  对=0  听成=lm  | LLM 擅长读新闻和财报，但不擅长直接预测价格。
+ 25  2:32.0  13 cv3   LLM,RAG  对=1;0  听成=llm;r  | 把 LLM 和 RAG 结合起来，就能做一个研报问答助手。
+ 26  2:38.9  13 ming  LLM,RAG  对=0;0  听成=lm;  | 把 LLM 和 RAG 结合起来，就能做一个研报问答助手。
+ 27  2:45.3  14 cv3   CNC  对=1  听成=cnc  | 在工厂里，CNC 机床按照程序自动切削零件。
+ 28  2:51.6  14 ming  CNC  对=1  听成=cnc  | 在工厂里，CNC 机床按照程序自动切削零件。
+ 29  2:57.3  15 cv3   IMU  对=1  听成=imu  | 机器人身上的 IMU 负责测量加速度和角速度。
+ 30  3:03.3  15 ming  IMU  对=1  听成=imu  | 机器人身上的 IMU 负责测量加速度和角速度。
+ 31  3:09.1  16 cv3   PID  对=1  听成=pid  | 电机转速的闭环控制，最经典的方法还是 PID。
+ 32  3:15.2  16 ming  PID  对=1  听成=pid  | 电机转速的闭环控制，最经典的方法还是 PID。
+ 33  3:20.9  17 cv3   GBDT  对=1  听成=gbdt  | GBDT 是一种树模型，在表格数据上非常强。
+ 34  3:27.7  17 ming  GBDT  对=1  听成=gbdt  | GBDT 是一种树模型，在表格数据上非常强。
+ 35  3:33.4  18 cv3   PPO  对=1  听成=ppo  | 训练交易智能体时，很多人会选择 PPO 算法。
+ 36  3:39.4  18 ming  PPO  对=1  听成=ppo  | 训练交易智能体时，很多人会选择 PPO 算法。
+ 37  3:45.1  19 cv3   EMA  对=1  听成=ema  | 和普通均线相比，EMA 对最近的价格更敏感。
+ 38  3:50.9  19 ming  EMA  对=1  听成=ema  | 和普通均线相比，EMA 对最近的价格更敏感。
+ 39  3:56.6  20 cv3   GPU  对=1  听成=gpu  | 模型越大，训练时越离不开 GPU。
+ 40  4:01.2  20 ming  GPU  对=1  听成=gpu  | 模型越大，训练时越离不开 GPU。
+ 41  4:05.8  21 cv3   API  对=1  听成=api  | 券商一般会开放 API，让程序直接下单。
+ 42  4:11.3  21 ming  API  对=1  听成=api  | 券商一般会开放 API，让程序直接下单。
+ 43  4:16.6  22 cv3   CPU  对=1  听成=cpu  | 回测数据量不大的时候，用 CPU 就够了。
+ 44  4:21.1  22 ming  CPU  对=1  听成=cpu  | 回测数据量不大的时候，用 CPU 就够了。
+ 45  4:25.8  23 cv3   SQL  对=1  听成=sql  | 历史行情可以存进数据库，再用 SQL 查询。
+ 46  4:33.4  23 ming  SQL  对=1  听成=sql  | 历史行情可以存进数据库，再用 SQL 查询。
+ 47  4:39.1  24 cv3   LSTM  对=1  听成=lstm  | LSTM 曾经是做时间序列预测的热门模型。
+ 48  4:45.4  24 ming  LSTM  对=1  听成=lstm  | LSTM 曾经是做时间序列预测的热门模型。
+ 49  4:50.8  25 cv3   Python  对=1  听成=python  | Python 是量化交易里最常用的编程语言。
+ 50  4:56.3  25 ming  Python  对=1  听成=python  | Python 是量化交易里最常用的编程语言。
+ 51  5:01.1  26 cv3   PyTorch  对=1  听成=pytorch  | 我们用 PyTorch 搭一个小网络，试试预测涨跌。
+ 52  5:07.2  26 ming  PyTorch  对=1  听成=pytorch  | 我们用 PyTorch 搭一个小网络，试试预测涨跌。
+ 53  5:12.3  27 cv3   Transformer  对=1  听成=transformer  | Transformer 最早用于机器翻译，后来被用到了行情预测上。
+ 54  5:20.1  27 ming  Transformer  对=1  听成=transformer  | Transformer 最早用于机器翻译，后来被用到了行情预测上。
+ 55  5:26.6  28 cv3   LightGBM  对=0  听成=lygbm  | 如果特征很多，可以先试试 LightGBM。
+ 56  5:32.6  28 ming  LightGBM  对=1  听成=lightgbm  | 如果特征很多，可以先试试 LightGBM。
+ 57  5:37.4  29 cv3   ROS  对=0  听成=rs  | 机器人软件大多跑在 ROS 上，它负责各个模块之间的通信。
+ 58  5:45.7  29 ming  ROS  对=1  听成=ros  | 机器人软件大多跑在 ROS 上，它负责各个模块之间的通信。
+ 59  5:52.0  30 cv3   GitHub  对=1  听成=gethub  | 代码写好以后，可以放到 GitHub 上做版本管理。
+ 60  5:57.4  30 ming  GitHub  对=1  听成=github  | 代码写好以后，可以放到 GitHub 上做版本管理。
+ 61  6:02.5  31 cv3   Excel  对=1  听成=excel  | 很多交易员的第一个回测，其实是在 Excel 里做的。
+ 62  6:08.6  31 ming  Excel  对=1  听成=excel  | 很多交易员的第一个回测，其实是在 Excel 里做的。
+ 63  6:14.0  32 cv3   NumPy  对=1  听成=num  | 处理矩阵运算，NumPy 比纯循环快几十倍。
+ 64  6:20.1  32 ming  NumPy  对=1  听成=nump  | 处理矩阵运算，NumPy 比纯循环快几十倍。
+ 65  6:25.5  33 cv3   CSV,Pandas  对=1;1  听成=csv;pandas  | 读取 CSV 行情文件，一行 Pandas 代码就够了。
+ 66  6:31.6  33 ming  CSV,Pandas  对=1;1  听成=csv;pandas  | 读取 CSV 行情文件，一行 Pandas 代码就够了。
+ 67  6:37.3  34 cv3   Docker  对=1  听成=docker  | 为了让环境在任何电脑上都能复现，我们把它打包进 Docker。
+ 68  6:44.2  34 ming  Docker  对=1  听成=docker  | 为了让环境在任何电脑上都能复现，我们把它打包进 Docker。
+ 69  6:50.9  35 cv3   Sharpe Ratio  对=0  听成=jupsratio  | Sharpe Ratio 衡量的是每承担一份风险，能换来多少收益。
+ 70  6:57.5  35 ming  Sharpe Ratio  对=1  听成=sharperatio  | Sharpe Ratio 衡量的是每承担一份风险，能换来多少收益。
+ 71  7:04.0  36 cv3   Moving Average  对=1  听成=movingaverage  | 最简单的趋势策略，就是看价格在不在 Moving Average 上方。
+ 72  7:10.8  36 ming  Moving Average  对=1  听成=movingaverage  | 最简单的趋势策略，就是看价格在不在 Moving Average 上方。
+ 73  7:17.0  37 cv3   Backtest  对=0  听成=bugtest  | 任何策略上线之前，都要先做 Backtest。
+ 74  7:21.9  37 ming  Backtest  对=1  听成=backtest  | 任何策略上线之前，都要先做 Backtest。
+ 75  7:26.8  38 cv3   Flow Matching  对=1  听成=flowmatching  | 生成动作的时候，这个模型用的是 Flow Matching。
+ 76  7:32.2  38 ming  Flow Matching  对=1  听成=flowmatch  | 生成动作的时候，这个模型用的是 Flow Matching。
+ 77  7:37.1  39 cv3   ball screw  对=1  听成=bullscrew  | 电机通过 ball screw 把旋转变成直线运动。
+ 78  7:42.4  39 ming  ball screw  对=0  听成=bossgroove  | 电机通过 ball screw 把旋转变成直线运动。
+ 79  7:47.6  40 cv3   Stop Loss  对=1  听成=stoploss  | 每一笔交易都应该提前设好 Stop Loss。
+ 80  7:53.1  40 ming  Stop Loss  对=1  听成=stoploss  | 每一笔交易都应该提前设好 Stop Loss。
+ 81  7:57.8  41 cv3   Order Book  对=1  听成=oterbook  | Order Book 里记录着每个价位上排队的买单和卖单。
+ 82  8:03.2  41 ming  Order Book  对=1  听成=orderbook  | Order Book 里记录着每个价位上排队的买单和卖单。
+ 83  8:08.7  42 cv3   Diffusion Policy  对=1  听成=diffusionpolicy  | Diffusion Policy 让机器人学会了更灵巧的抓取动作。
+ 84  8:15.4  42 ming  Diffusion Policy  对=1  听成=diffusionpolicy  | Diffusion Policy 让机器人学会了更灵巧的抓取动作。
+ 85  8:21.6  43 cv3   Reinforcement Learning  对=1  听成=reinforcementlearning  | 让智能体在试错中学习，这就是 Reinforcement Learning。
+ 86  8:27.6  43 ming  Reinforcement Learning  对=1  听成=reinforcementlearning  | 让智能体在试错中学习，这就是 Reinforcement Learning。
+ 87  8:33.5  44 cv3   Market Maker  对=1  听成=marketmaker  | Market Maker 同时挂买单和卖单，赚中间的价差。
+ 88  8:39.9  44 ming  Market Maker  对=1  听成=marketmaker  | Market Maker 同时挂买单和卖单，赚中间的价差。
+ 89  8:45.6  45 cv3   Momentum  对=1  听成=momentum  | 过去涨得多的股票继续涨，这种现象叫 Momentum。
+ 90  8:51.3  45 ming  Momentum  对=1  听成=momentum  | 过去涨得多的股票继续涨，这种现象叫 Momentum。
+ 91  8:56.7  46 cv3   Alpha  对=1  听成=alpha  | 扣除市场本身的涨幅之后，剩下的超额收益叫 Alpha。
+ 92  9:03.0  46 ming  Alpha  对=1  听成=alpha  | 扣除市场本身的涨幅之后，剩下的超额收益叫 Alpha。
+ 93  9:08.9  47 cv3   Beta  对=1  听成=bet  | 一只股票的 Beta 大于一，说明它比大盘波动更大。
+ 94  9:14.8  47 ming  Beta  对=1  听成=beta  | 一只股票的 Beta 大于一，说明它比大盘波动更大。
+ 95  9:20.6  48 cv3   Bollinger Bands  对=1  听成=bollingerbands  | 价格碰到 Bollinger Bands 的上轨，不一定就是卖出信号。
+ 96  9:27.4  48 ming  Bollinger Bands  对=1  听成=bollingerbands  | 价格碰到 Bollinger Bands 的上轨，不一定就是卖出信号。
+ 97  9:33.0  49 cv3   Kalman Filter  对=1  听成=kalmanfilter  | 用 Kalman Filter 可以从噪声里估计出真实的价差。
+ 98  9:38.8  49 ming  Kalman Filter  对=0  听成=mmonfilter  | 用 Kalman Filter 可以从噪声里估计出真实的价差。
+ 99  9:44.5  50 cv3   encoder  对=1  听成=encoder  | 关节上的 encoder 会实时告诉控制器电机转了多少。
+100  9:50.5  50 ming  encoder  对=1  听成=encoder  | 关节上的 encoder 会实时告诉控制器电机转了多少。
+101  9:56.3  51 cv3   preload  对=1  听成=preload  | 丝杠装配时要加一点 preload，消除轴向间隙。
+102  10:02.7  51 ming  preload  对=1  听成=preload  | 丝杠装配时要加一点 preload，消除轴向间隙。
+103  10:08.4  52 cv3   reusable  对=1  听成=reusable  | 可回收火箭的关键，就是做成 reusable 的结构。
+104  10:14.7  52 ming  reusable  对=1  听成=reusable  | 可回收火箭的关键，就是做成 reusable 的结构。
+105  10:20.4  53 cv3   semiconductor  对=1  听成=semiconductor  | 这一轮行情里，semiconductor 板块涨得最猛。
+106  10:26.5  53 ming  semiconductor  对=0  听成=semicount  | 这一轮行情里，semiconductor 板块涨得最猛。
+107  10:31.0  54 cv3   dataset  对=1  听成=dataset  | 训练之前，先把 dataset 分成训练集和测试集。
+108  10:36.7  54 ming  dataset  对=1  听成=dataset  | 训练之前，先把 dataset 分成训练集和测试集。
+109  10:42.1  55 cv3   timestamp  对=0  听成=umtyham  | 每一笔成交都带着 timestamp，精确到毫秒。
+110  10:48.1  55 ming  timestamp  对=1  听成=timestamp  | 每一笔成交都带着 timestamp，精确到毫秒。
+111  10:53.1  56 cv3   gearbox  对=1  听成=gearbox  | 机器人的关节里通常装着一个减速 gearbox。
+112  10:58.2  56 ming  gearbox  对=1  听成=gearbox  | 机器人的关节里通常装着一个减速 gearbox。
+113  11:03.0  57 cv3   lead screw  对=1  听成=leadscrew  | 精度要求不高的地方，用 lead screw 就够了，成本更低。
+114  11:09.7  57 ming  lead screw  对=1  听成=leadscr  | 精度要求不高的地方，用 lead screw 就够了，成本更低。
+115  11:15.7  58 cv3   live data  对=1  听成=livedata  | 实盘系统接入的是 live data，回测用的是历史数据。
+116  11:22.0  58 ming  live data  对=1  听成=livedata  | 实盘系统接入的是 live data，回测用的是历史数据。
+117  11:28.0  59 cv3   wind turbine  对=1  听成=windturbine  | 海上的 wind turbine 越做越大，叶片超过一百米。
+118  11:34.5  59 ming  wind turbine  对=1  听成=windturbine  | 海上的 wind turbine 越做越大，叶片超过一百米。
+119  11:40.1  60 cv3   close  对=1  听成=close  | 很多策略只用每天的 close 价格来计算信号。
+120  11:45.9  60 ming  close  对=1  听成=clo  | 很多策略只用每天的 close 价格来计算信号。

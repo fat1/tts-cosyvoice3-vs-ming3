@@ -1,4 +1,4 @@
-"""Ming-3.0-tts-0.5B 克隆 steven，原句直接合成（不套读音表）。在 ming-tts 环境运行。
+"""Ming-3.0-tts-0.5B 克隆 ref/ 下的标准参考音（REF=zh|en），原句直接合成（不套读音表）。在 ming-tts 环境运行。
 用法: python gen_ming.py [句子编号…]   输出 out/ming/<编号>_<第几次>.wav 和 out/ming/timing.json
 环境变量 MING_LANG（默认 Chinese）、MING_TN=0 关掉文本归一化、MING_OUT 换输出子目录、MING_SET=en 用整句英文测试集。
 """

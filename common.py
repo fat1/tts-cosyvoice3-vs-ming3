@@ -1,10 +1,13 @@
-"""两个生成脚本共用：读测试句、steven 样本路径。"""
+"""生成、打分脚本共用：读测试句、参考音路径。
+参考音由环境变量 REF 选择：zh（默认，中英混读）/ en（整句英文），文件见 ref/（prep_ref.py 生成）。"""
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SAMPLE = ROOT.parent / "studio" / "role" / "steven" / "steven.wav"
+REF = os.environ.get("REF", "zh")
+SAMPLE = ROOT / "ref" / f"{REF}.wav"
 PROMPT_TEXT = SAMPLE.with_suffix(".txt").read_text(encoding="utf-8").strip()
 RUNS = 3  # 每句生成几次
 

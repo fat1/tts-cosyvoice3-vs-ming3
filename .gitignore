@@ -4,3 +4,6 @@ out/
 __pycache__/
 *.log
 resume_quant.sh
+x_article.html
+run_std.log
+_old_steven/

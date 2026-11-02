@@ -1,40 +1,54 @@
-# TTS 实测：CosyVoice 3 vs Ming-3.0-tts（中英混读 / 整句英文）
+# TTS 实测：CosyVoice 3 vs Ming-3.0-tts（不建读音表）
 
-不套读音表的条件下，比较 [Fun-CosyVoice3-0.5B](https://github.com/FunAudioLLM/CosyVoice) 和 [Ming-3.0-tts-0.5B](https://github.com/inclusionAI/Ming-3.0-tts) 的英文发音、中文准确率、音色相似度、稳定性和速度。
+在**两边都不用读音表**、**克隆同一段第三方标准声音**的条件下，比较 [Fun-CosyVoice3-0.5B](https://github.com/FunAudioLLM/CosyVoice) 和 [Ming-3.0-tts-0.5B](https://github.com/inclusionAI/Ming-3.0-tts) 的英文发音。
 
-- 完整报告：[TTS模型选型与实测_为什么考虑换Ming3.md](TTS模型选型与实测_为什么考虑换Ming3.md)
+- Q1 中英混读：中文旁白夹英文缩写和术语（60 句，58 个英文词）
+- Q2 纯英文：整句英文旁白里的专业术语（20 句）——英文还需要建读音表吗？
+
+完整报告：[TTS模型选型与实测_为什么考虑换Ming3.md](TTS模型选型与实测_为什么考虑换Ming3.md)
 
 ## 主要结论
 
 | 指标 | CosyVoice 3 | Ming-3.0-tts |
 |---|---|---|
-| 中英混读：英文词正确率 | 87.3% | 87.3% |
-| 　字母缩写 | **83.3%** | 74.4% |
-| 　单词 / 工具名 | 87.9% | **100%** |
-| 语速异常 | 4 / 180 | **0 / 180** |
-| 整句英文 WER（CV3 套读音表，Ming 不套） | **2.5%** | 3.3% |
-| 速度 RTF | **2.10** | 4.69 |
-| 输出采样率 | 24 kHz | **44.1 kHz** |
+| Q1 英文词正确率 | 82.5% | **85.7%** |
+| Q1 字母缩写 | **78.2%** | 73.1% |
+| Q1 单词 / 工具名 | 81.8% | **100%** |
+| Q1 3 次全对的词 | 39 / 58 | **49 / 58** |
+| Q2 整句错词率 WER | 3.9% | **3.2%** |
+| Q2 整句一字不差 | 31 / 60 | **40 / 60** |
+| Q2 难词识别率 | 98.5% | 98.2% |
+| Q2 不建读音表仍需处理的词 | reusable、CAM | ROS |
+| 音色相似度（与参考音） | **0.89** | 0.77 |
+| 速度 RTF（越小越快） | **1.9** | 4.6 |
+
+## 参考音（Open Speech Repository）
+
+- 中文：[OSR_cn_000_0072_8k.wav](https://www.voiptroubleshooter.com/open_speech/chinese/OSR_cn_000_0072_8k.wav)，取前 3 句（8.6 秒）
+- 英文：[OSR_us_000_0010_8k.wav](https://www.voiptroubleshooter.com/open_speech/american/OSR_us_000_0010_8k.wav)，取前 4 句（10.2 秒）
+- `prep_ref.py` 负责下载、转 16 kHz、截取并写出逐字稿（`ref/zh.txt`、`ref/en.txt`）。原音是 8 kHz，对两个模型影响相同，但音色相似度的绝对值会偏低。
 
 ## 目录
 
 | 路径 | 内容 |
 |---|---|
-| `sentences.txt` | 60 句中英混读测试句（含要核对的英文词） |
-| `en/sentences_en.txt` | 20 句整句英文测试句（摘自已发布视频旁白） |
-| `gen_cv3.py` / `gen_cv3_en.py` | CosyVoice 3 生成（中英混读 / 整句英文） |
-| `gen_ming.py` | Ming 生成（环境变量 `MING_SET` / `MING_LANG` / `MING_OUT` 切换测试集） |
+| `sentences.txt` / `en/sentences_en.txt` | Q1 / Q2 测试句 |
+| `prep_ref.py` | 准备参考音 |
+| `gen_cv3.py` / `gen_ming.py` | 生成（原句直接合成，不套读音表） |
 | `score.py` / `score_en.py` | Whisper large-v3-turbo + Paraformer + campplus 打分 |
-| `common.py` | 读测试句、样本路径 |
-| `setup_env.sh` / `run_test.sh` / `run_en.sh` | 环境搭建与批量运行脚本 |
-| `report.csv` / `en/report_en.csv` | 每条音频的明细（转写、判定、相似度、RTF） |
-| `汇总.txt` / `en/汇总_en.txt` | 逐词汇总 |
-| `audio_cases/` | 报告里引用的案例音频（每个文件连放同一句的 3 次生成） |
-| `试听.mp3` / `en/试听_en.mp3` | 全部句子试听合集（先 CV3 后 Ming），目录见对应 `_目录.txt` |
+| `run_std.sh` | 一键跑完全部生成和打分 |
+| `std/report.csv`、`std/汇总.txt` | Q1 每条明细、逐词汇总 |
+| `std/en/report_en.csv`、`std/en/汇总_en.txt` | Q2 每条明细、逐词汇总 |
+| `std/试听.mp3`、`std/en/试听_en.mp3` | 全部句子试听合集（先 CV3 后 Ming），目录见 `_目录.txt` |
+| `audio_cases/` | 报告里引用的案例音频（每个文件连放同一句的 3 次生成）和参考音 |
 
-## 复现说明
+## 复现
 
-- 脚本里的模型 / 环境路径（`D:\steven\models\...`、`D:\miniconda3\envs\...`）是作者本机路径，复现时请改成自己的。
-- 克隆用的说话人参考音频（`studio/role/steven/steven.wav`）和生产用读音表 `pronounce_en.txt` 不在本仓库中，需要自备。
-- 原始 wav（`out/`）体积较大，未入库；报告中的文件名 `试听.wav` 对应本仓库的 `试听.mp3`。
-- 测试环境：Windows 10，RTX 3060 Laptop 6GB；CosyVoice 3 用 fp32，Ming 用 bf16（SDPA，无 flash-attn）。
+```bash
+bash run_std.sh   # 依次：prep_ref → CV3/Ming 生成 Q1、Q2 → 打分
+```
+
+- 脚本里的模型 / 环境路径（`D:\steven\models\...`、`D:\miniconda3\envs\...`）是作者本机路径，请改成自己的。
+- 打分复用作者项目里的 `studio/pronounce.py`（字母相似度阈值、中文比对、Whisper 路径），不在本仓库中。
+- 原始 wav（`out/`）体积大，未入库。
+- 测试环境：Windows 10，RTX 3060 Laptop 6GB；CosyVoice 3 fp32，Ming bf16（SDPA，无 flash-attn）。
