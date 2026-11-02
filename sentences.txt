@@ -1,0 +1,62 @@
+# 中英混读测试句：编号 | 句子（原样送进 TTS，不套读音表）| 要核对的英文词（逗号分隔，须与句中写法一致）
+# 类别：A=字母缩写 W=单词/工具名 M=多词术语 R=曾经念错的词 H=同形异音
+01 | ETF 是一种在交易所买卖的基金，费用通常很低。 | ETF
+02 | 很多人第一次买指数基金，选的就是宽基 ETF。 | ETF
+03 | HFT 也就是高频交易，比拼的是微秒级的速度。 | HFT
+04 | 大资金拆单的时候，常用 VWAP 作为执行基准。 | VWAP
+05 | TWAP 把订单按时间平均切开，逻辑最简单。 | TWAP
+06 | 如果成交量分布很不均匀，TWAP 和 VWAP 的差别就会变大。 | TWAP,VWAP
+07 | MACD 由两条均线的差值算出来，用来判断趋势。 | MACD
+08 | 止损距离可以设成两倍的 ATR，这样能随波动自动调整。 | ATR
+09 | 风控部门每天都要计算组合的 VaR。 | VaR
+10 | 一根 K 线包含四个价格，也就是 OHLC 数据。 | OHLC
+11 | 想让大模型回答公司内部文档，最常见的做法是 RAG。 | RAG
+12 | LLM 擅长读新闻和财报，但不擅长直接预测价格。 | LLM
+13 | 把 LLM 和 RAG 结合起来，就能做一个研报问答助手。 | LLM,RAG
+14 | 在工厂里，CNC 机床按照程序自动切削零件。 | CNC
+15 | 机器人身上的 IMU 负责测量加速度和角速度。 | IMU
+16 | 电机转速的闭环控制，最经典的方法还是 PID。 | PID
+17 | GBDT 是一种树模型，在表格数据上非常强。 | GBDT
+18 | 训练交易智能体时，很多人会选择 PPO 算法。 | PPO
+19 | 和普通均线相比，EMA 对最近的价格更敏感。 | EMA
+20 | 模型越大，训练时越离不开 GPU。 | GPU
+21 | 券商一般会开放 API，让程序直接下单。 | API
+22 | 回测数据量不大的时候，用 CPU 就够了。 | CPU
+23 | 历史行情可以存进数据库，再用 SQL 查询。 | SQL
+24 | LSTM 曾经是做时间序列预测的热门模型。 | LSTM
+25 | Python 是量化交易里最常用的编程语言。 | Python
+26 | 我们用 PyTorch 搭一个小网络，试试预测涨跌。 | PyTorch
+27 | Transformer 最早用于机器翻译，后来被用到了行情预测上。 | Transformer
+28 | 如果特征很多，可以先试试 LightGBM。 | LightGBM
+29 | 机器人软件大多跑在 ROS 上，它负责各个模块之间的通信。 | ROS
+30 | 代码写好以后，可以放到 GitHub 上做版本管理。 | GitHub
+31 | 很多交易员的第一个回测，其实是在 Excel 里做的。 | Excel
+32 | 处理矩阵运算，NumPy 比纯循环快几十倍。 | NumPy
+33 | 读取 CSV 行情文件，一行 Pandas 代码就够了。 | CSV,Pandas
+34 | 为了让环境在任何电脑上都能复现，我们把它打包进 Docker。 | Docker
+35 | Sharpe Ratio 衡量的是每承担一份风险，能换来多少收益。 | Sharpe Ratio
+36 | 最简单的趋势策略，就是看价格在不在 Moving Average 上方。 | Moving Average
+37 | 任何策略上线之前，都要先做 Backtest。 | Backtest
+38 | 生成动作的时候，这个模型用的是 Flow Matching。 | Flow Matching
+39 | 电机通过 ball screw 把旋转变成直线运动。 | ball screw
+40 | 每一笔交易都应该提前设好 Stop Loss。 | Stop Loss
+41 | Order Book 里记录着每个价位上排队的买单和卖单。 | Order Book
+42 | Diffusion Policy 让机器人学会了更灵巧的抓取动作。 | Diffusion Policy
+43 | 让智能体在试错中学习，这就是 Reinforcement Learning。 | Reinforcement Learning
+44 | Market Maker 同时挂买单和卖单，赚中间的价差。 | Market Maker
+45 | 过去涨得多的股票继续涨，这种现象叫 Momentum。 | Momentum
+46 | 扣除市场本身的涨幅之后，剩下的超额收益叫 Alpha。 | Alpha
+47 | 一只股票的 Beta 大于一，说明它比大盘波动更大。 | Beta
+48 | 价格碰到 Bollinger Bands 的上轨，不一定就是卖出信号。 | Bollinger Bands
+49 | 用 Kalman Filter 可以从噪声里估计出真实的价差。 | Kalman Filter
+50 | 关节上的 encoder 会实时告诉控制器电机转了多少。 | encoder
+51 | 丝杠装配时要加一点 preload，消除轴向间隙。 | preload
+52 | 可回收火箭的关键，就是做成 reusable 的结构。 | reusable
+53 | 这一轮行情里，semiconductor 板块涨得最猛。 | semiconductor
+54 | 训练之前，先把 dataset 分成训练集和测试集。 | dataset
+55 | 每一笔成交都带着 timestamp，精确到毫秒。 | timestamp
+56 | 机器人的关节里通常装着一个减速 gearbox。 | gearbox
+57 | 精度要求不高的地方，用 lead screw 就够了，成本更低。 | lead screw
+58 | 实盘系统接入的是 live data，回测用的是历史数据。 | live data
+59 | 海上的 wind turbine 越做越大，叶片超过一百米。 | wind turbine
+60 | 很多策略只用每天的 close 价格来计算信号。 | close

@@ -1,0 +1,21 @@
+# 整句英文测试：编号 | 来源 | 句子（原文，CV3 生成时套 pronounce_en.txt，Ming 原样）
+01 | P06E02 | The first kind: in simulation, a planner completes tasks automatically, because the simulator knows exactly where every object is, generating thousands of demos overnight, every one with perfectly accurate labels built in.
+02 | S04E07 | Photograph a high-precision checkerboard, and the software finds every corner, compares them to their true positions, and solves for lens distortion, camera pose, and exactly how many millimeters each pixel represents.
+03 | S01E05 | Of course, 5-axis has a cost: more expensive machines, programming that depends on CAM software, careful collision simulation between tool, spindle and fixture, and regular calibration of the rotary axes.
+04 | S01E08 | Ultra-precision machines sit in temperature-controlled, vibration-isolated rooms and diamond-turn optics with nanometer-level surface roughness.
+05 | S02E08 | High-end machines go further, measuring the angle with lasers during the bend, sometimes briefly unloading to check springback, then correcting automatically to get it right the first time.
+06 | S04E01 | It's usually a permanent magnet synchronous motor with an encoder on the back, resolving hundreds of thousands, even millions, of positions per turn.
+07 | P01E02 | An AI model is no different: in ROS 2, it's just an ordinary node that subscribes to images and publishes detections.
+08 | P01E03 | The most common tool is OpenCV: take a checkerboard, shoot a dozen photos from different angles, and OpenCV finds every corner, computes the intrinsics and distortion, and straightens out the bent image.
+09 | P04E01 | Back in season one, when we covered MPC, robots also rehearsed, but with physics equations hand-written by engineers, which only work for simple, well-defined systems.
+10 | P05E05 | In the final season, we take these models out of the lab: from training to deployment, with simulation, data pipelines, on-device inference, safety layers and self-driving.
+11 | U03E03 | Turn on the in-process workpiece, and the software remembers what the previous operation left behind and uses that remaining material as the next operation's blank.
+12 | U06E01 | In NX, you can save a finished program as a reusable group of operations, with the coordinate system, tools, operation order and cutting parameters all inside.
+13 | Q01E01 | In nineteen ninety-eight, Long-Term Capital Management, with Nobel Prize winners on board, had brilliant models and far too much leverage, and within a few months it nearly collapsed.
+14 | Q01E02 | Quant wins on discipline and testability, but struggles with unprecedented events and crowded strategies.
+15 | Q01E06 | Next season, we'll dive into classic strategies: trend following, mean reversion, breakouts and arbitrage, and see where quant profits really come from.
+16 | Q02E06 | To sum up, asset allocation reduces swings through diversification, rebalancing resets the mix by mechanically selling high and buying low, and risk parity allocates by risk rather than dollars.
+17 | Q04E05 | Third, look for genuinely different sources of return: different asset classes, and different kinds of strategies too, like trend following and mean reversion.
+18 | U01E01 | Model, operations, tool paths, post-processing and G-code: put the five stops together, and you have the big picture of NX CAM programming.
+19 | U01E02 | First, follow the drawing's datums: wherever the dimensions start, put zero there, so programming and inspection need no conversions.
+20 | U02E06 | For complex 3D parts with lots of edges, NX has a dedicated deburring operation that finds all the sharp edges automatically.
